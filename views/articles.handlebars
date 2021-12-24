@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/styles.css">
+<div class="card">
+  <div class="card-body ms-3">
+    <h5 class="card-title bg-primary text-light p-3">Update Article</h5>
+    <form class='form update-form'>
+      <div class="mb-3">
+        <label for="update-title" class="form-label">{{article.title}}</label>
+        <input type="text" class="form-control" id="update-title" aria-describedby="userNameHelp" value='{{article.title}}'>
+      </div>
+      <div class="mb-3">
+        <label for="update-content" class="form-label">{{article.content}}</label>
+        <textarea class="form-control" id="update-content">{{article.content}}
+        </textarea>
+      <button type="submit" class="btn btn-primary mt-2">Update Article</button>
+      <button type="submit" class="btn btn-danger mt-2 deleteBtn">Delete Article</button>
+    </form>
+   
+  </div>
+</div>
+<script src='../public/js/update.js'></script>
+<script src='../public/js/delete.js'></script>
