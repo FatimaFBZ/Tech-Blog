@@ -1,20 +1,20 @@
 const deleteurl= window.location.pathname;
 const deleteid= url.substring(deleteurl.lastIndexOf('/')+1)
-console.log('delete id'+deleteid);
+console.log('delete id'+ deleteid);
 
 const deleteArticle = async (event) => {
     event.preventDefault();
   
   
-    if (id) {
-      const response = await fetch(`/api/postArticles/${deleteid}`, {
+    if (deleteid) {
+      const response = await fetch(`/api/articles/${deleteid}`, {
         method: 'DELETE',
         body: JSON.stringify({ 
-            deleteId: id,
+            deleteId: deleteid,
                  }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
+  console.log('check response', response)
       if (response.ok) {
         document.location.replace('/');
       } else {
@@ -26,7 +26,8 @@ const deleteArticle = async (event) => {
   
   document
     .querySelector('.deleteBtn')
-    .addEventListener('submit', deleteArticle);
+    .onclick =  deleteArticle;
+    
   
   
   

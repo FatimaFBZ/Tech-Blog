@@ -49,6 +49,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
     try {
+      console.log('we got correct id', req.params.id)
       const articleData = await Article.destroy({
      
           where:{
